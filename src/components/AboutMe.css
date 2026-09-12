@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.aboutpage{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8%;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    
+}
+
+.aboutgreet{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+
+    p{
+    font-size: 20px;
+    color: cornflowerblue;
+    text-align: end;
+    }
+
+    h1{
+    font-size: 68px;
+    color: whitesmoke;
+    }
+}
+
+.descabout{
+    max-width: 500px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25 0 25 0;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.aboutcontent{
+    margin-left: 100px;
+}
+
+.aboutskill{
+    margin-top: 100px;
+    text-align: end;
+}
+
+.skillimg{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    margin-bottom: 5px;
+    background: rgba(26, 25, 25, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    border: 1px solid rgba(34, 32, 32, 0.5);
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+}
+
+.skillelem{
+    color: cornflowerblue;
+    margin-bottom: 25px;
+    border: 1px solid whitesmoke;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.skillcontent{
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}

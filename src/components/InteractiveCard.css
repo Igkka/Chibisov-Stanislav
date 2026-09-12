@@ -1,0 +1,97 @@
+.interactive-card {
+    position: relative;
+    width: 30vw;
+    height: 82vh;
+    overflow: hidden;
+    border-radius: 32px;
+
+    background: transparent;
+
+    transform:
+        perspective(1400px)
+        rotateX(var(--rotate-x))
+        rotateY(var(--rotate-y));
+
+    transform-style: preserve-3d;
+}
+/* Фотография */
+
+.interactive-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    user-select: none;
+    pointer-events: none;
+
+    filter: grayscale(100%);
+
+    transform: scale(1.02);
+
+    transition:
+        filter 0.7s ease,
+        transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.interactive-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.06);
+}
+
+/* Затемнение по краям */
+
+.interactive-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.14),
+            transparent 28%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+.interactive-card:hover::before {
+    opacity: 1;
+}
+
+/* Мягкая тень */
+
+.interactive-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.18)
+        );
+
+    z-index: 1;
+
+    transition: opacity 0.5s ease;
+}
+
+.interactive-card:hover::after {
+    opacity: 0.5;
+}

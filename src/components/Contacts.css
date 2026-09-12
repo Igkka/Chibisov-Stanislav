@@ -1,0 +1,106 @@
+.contactspage {
+  min-height: 100vh;
+  padding: 120px 0 100px;
+  margin-top: 200px;
+}
+
+.contactscontent {
+  width: min(100% - 48px, 1400px);
+  margin: 0 auto;
+}
+
+.contacts-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(480px, 1.35fr);
+  align-items: start;
+  gap: clamp(50px, 7vw, 135px);
+}
+
+/* Левый текстовый блок */
+.contactsgreet {
+  padding-top: 6px;
+}
+
+.contactsgreet > p {
+  margin: 0 0 16px;
+  color: #6d9cff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.contactsgreet h1 {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: clamp(3.2rem, 5vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.contactsgreet h2 {
+  max-width: 420px;
+  margin: 0;
+  color: rgba(238, 243, 255, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Убираем у формы собственные отступы/фон секции,
+   чтобы она стояла справа в том же ряду */
+.contacts-layout .contact-form-section {
+  width: 100%;
+  min-height: auto;
+  padding: 0;
+  overflow: visible;
+}
+
+.contacts-layout .contact-form-section::before,
+.contacts-layout .contact-form-section::after {
+  display: none;
+}
+
+.contacts-layout .contact-form-card {
+  width: 100%;
+  margin: 0;
+}
+
+/* Заголовок внутри формы уже не нужен:
+   описание остаётся слева в .contactsgreet */
+.contacts-layout .contact-form-heading {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .contacts-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contactsgreet h2 {
+    max-width: 620px;
+  }
+
+  .contacts-layout .contact-form-card {
+    max-width: 820px;
+  }
+}
+
+@media (max-width: 650px) {
+  .contactspage {
+    padding: 90px 0 70px;
+  }
+
+  .contactscontent {
+    width: min(100% - 32px, 1400px);
+  }
+
+  .contacts-layout {
+    gap: 34px;
+  }
+
+  .contactsgreet h1 {
+    font-size: clamp(2.7rem, 14vw, 4.3rem);
+  }
+}
