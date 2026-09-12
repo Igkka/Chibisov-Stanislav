@@ -3,7 +3,7 @@ import "@/components/Footer.css";
 
 const navigation = [
   { label: "Home", href: "/" },
-  { label: "About Me", href: "/#about" },
+  { label: "About Me", href: "/#aboutme" },
   { label: "Projects", href: "/#projects" },
   { label: "Skills", href: "/#skills" },
   { label: "Contacts", href: "/#contacts" },
