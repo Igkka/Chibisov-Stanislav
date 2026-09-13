@@ -45,3 +45,61 @@
 .skillscontent{
     margin-top: 300px;
 }
+
+@media (max-width: 700px) {
+
+    .skillspage {
+        width: 100%;
+        min-height: 100vh;
+        padding: 100px 20px 60px;
+        box-sizing: border-box;
+        margin-top:200px ;
+    }
+
+    .skillsgreet {
+        width: 100%;
+        margin: 0 0 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .skillsgreet p {
+        margin: 0 0 12px;
+        font-size: 16px;
+        color: cornflowerblue;
+        text-align: center;
+    }
+
+    .skillsgreet h1 {
+        margin: 0;
+        font-size: clamp(45px, 14vw, 60px);
+        line-height: 1;
+        color: whitesmoke;
+        text-align: center;
+    }
+
+    .descskills {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto 60px;
+        display: block;
+        color: whitesmoke;
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+
+    .skillscontent {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+}

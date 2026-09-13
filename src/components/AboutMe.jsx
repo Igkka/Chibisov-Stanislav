@@ -29,8 +29,10 @@ export default function AboutMe(){
 
     return(
         <section  className="aboutpage" onMouseMove={handleMouseMove}>
-          
-          <CursorStar  mouse={mouse}  />
+          <div className="starcomp">
+          <CursorStar  mouse={mouse} />
+          </div>
+
 
         <div className="aboutcontent" id="aboutme">
 

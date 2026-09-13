@@ -1,9 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import "./InteractiveCard.css";
 
 export default function InteractiveCard() {
+  const [open, setOpen] = useState(false);
+
   const handleMove = (e) => {
+    // На мобильном 3D-эффект не нужен
+    if (window.innerWidth <= 768) return;
+
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
 
@@ -16,7 +22,6 @@ export default function InteractiveCard() {
     card.style.setProperty("--rotate-x", `${rotateX}deg`);
     card.style.setProperty("--rotate-y", `${rotateY}deg`);
 
-    // Положение блика
     card.style.setProperty(
       "--mouse-x",
       `${(x / rect.width) * 100}%`
@@ -38,16 +43,31 @@ export default function InteractiveCard() {
   };
 
   return (
-    <div
-      className="interactive-card"
-      onMouseMove={handleMove}
-      onMouseLeave={handleLeave}
-    >
-      <img
-        src="/profile.png"
-        alt="Stanislav"
-        draggable="false"
-      />
+    <div className={`interactive-card ${open ? "is-open" : ""}`}>
+      
+      <div
+        className="photo-card"
+        onMouseMove={handleMove}
+        onMouseLeave={handleLeave}
+      >
+        <img
+          src="/profile.png"
+          alt="Profile"
+          draggable="false"
+        />
+
+        <div className="photo-glow" />
+      </div>
+      
+      <button
+        className="photo-toggle"
+        onClick={() => setOpen(!open)}
+        aria-label="Открыть фотографию"
+      >
+        <span />
+        <span />
+      </button>
+
     </div>
   );
 }

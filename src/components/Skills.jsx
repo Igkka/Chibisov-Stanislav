@@ -22,8 +22,10 @@ export default function SkillsPage(){
 
 
                 <LogoLoop/>
-                
+                <div className="cardstech">
                 <TechCards/>
+                </div>
+
 
             </div>
 

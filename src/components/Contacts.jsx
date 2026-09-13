@@ -15,7 +15,7 @@ export default function ContactsPage() {
             </HoverText>
 
             <h2>
-              Feel free to reach out if you want to discuss a project, share an
+              Feel free to reach to  me if you want to discuss a project, share an
               idea, or simply get in touch.
             </h2>
           </div>

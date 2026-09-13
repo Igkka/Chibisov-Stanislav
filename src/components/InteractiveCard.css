@@ -1,59 +1,63 @@
 .interactive-card {
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
     position: relative;
     width: 30vw;
     height: 82vh;
+    border-radius: 32px;
+    z-index: 5;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.photo-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     border-radius: 32px;
-
-    background: transparent;
-
     transform:
         perspective(1400px)
         rotateX(var(--rotate-x))
         rotateY(var(--rotate-y));
 
     transform-style: preserve-3d;
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-/* Фотография */
 
-.interactive-card img {
+
+.photo-card img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
     object-position: center;
-
     user-select: none;
     pointer-events: none;
-
     filter: grayscale(100%);
-
     transform: scale(1.02);
-
     transition:
         filter 0.7s ease,
-        transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.interactive-card:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.06);
+@media (min-width: 769px) {
+
+    .photo-card:hover img {
+        filter: grayscale(0%);
+        transform: scale(1.06);
+    }
+
 }
 
-/* Затемнение по краям */
-
-.interactive-card::before {
+.photo-card::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
     z-index: 2;
-
     pointer-events: none;
-
     background:
         radial-gradient(
             circle at var(--mouse-x) var(--mouse-y),
@@ -62,36 +66,108 @@
         );
 
     opacity: 0;
-
-    transition: opacity 0.4s ease;
-}
-
-.interactive-card:hover::before {
-    opacity: 1;
-}
-
-/* Мягкая тень */
-
-.interactive-card::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.05),
-            rgba(0, 0, 0, 0.18)
-        );
-
-    z-index: 1;
-
     transition: opacity 0.5s ease;
 }
 
-.interactive-card:hover::after {
-    opacity: 0.5;
+
+@media (min-width: 769px) {
+
+    .photo-card:hover::before {
+        opacity: 1;
+    }
+
+}
+
+.photo-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.02),
+            rgba(0, 0, 0, 0.2)
+        );
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .interactive-card {
+        position: absolute;
+        right: -75%;
+        top: 6%;
+        width: 82vw;
+        height: 70vh;
+        transform: translateY(-50%);
+        transition:
+            right 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .interactive-card.is-open {
+        right: 9%;
+    }
+
+
+    .photo-card {
+        transform: none;
+    }
+
+
+    .photo-card img {
+        filter: grayscale(0%);
+        transform: none;
+    }
+
+.photo-toggle {
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 58px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    background: rgba(20, 20, 20, 0.65);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 20;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.photo-toggle span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+    transition:
+        transform 0.4s ease,
+        opacity 0.3s ease;
+}
+
+
+.photo-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+    .interactive-card.is-open .photo-toggle {
+        transform:
+            translateY(-50%)
+            rotate(180deg);
+    }
+
 }
