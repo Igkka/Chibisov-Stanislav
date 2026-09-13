@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>© {currentYear} Your Name. All rights reserved.</p>
+          <p>© {currentYear} Chibisov Stanislav. All rights reserved.</p>
 
           <a href="#home" className="footer__to-top" aria-label="Back to top">
             Back to top <span aria-hidden="true">↑</span>

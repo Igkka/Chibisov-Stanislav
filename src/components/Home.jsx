@@ -22,7 +22,11 @@ export default function HomePage(){
                 </p>
             </div>
 
-            <a href="#aboutme" className="scroll">Scroll to Explore</a>
+            <div className="homebuttons">
+                <a href="#projects" className="scroll">View My Projects</a>
+                <a href="#contacts" className="scroll">Contact Me</a>
+            </div>
+
 
             </div>
 

@@ -237,7 +237,7 @@ const AccordionGallery = ({
     </div>
  
       <div className='allprojects'>
-        <p>And This Not All My Projects</p>
+        <p>And these are just some of my projects.</p>
         <a href="https://github.com/Igkka">View All Projects</a>
       </div>
 

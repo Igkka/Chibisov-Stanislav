@@ -34,6 +34,12 @@
     margin-left: 100px;
 }
 
+.homebuttons{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
 .desc{
     max-width: 300px;
     color: whitesmoke;
@@ -44,19 +50,37 @@
 }
 
 .scroll{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 155px;
+    height: 52px;
+    padding: 0;
     color: whitesmoke;
-    outline: none;
-    border: 1px solid whitesmoke;
-    padding: 1rem;
-    display: flex;
-    gap: 15px;
-    width: 153px;
-    text-align: center;
-    border-radius: 15px;
-    transition: all .2s ease-in-out;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 14px;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+
     &:hover{
-        cursor: pointer;
-        border: 1px solid cornflowerblue;
+        transform: translateY(-3px);
+        color: white;
+        border-color: cornflowerblue;
+        background: rgba(100, 149, 237, 0.08);
+        box-shadow:
+            0 8px 30px rgba(100, 149, 237, 0.12),
+            inset 0 0 20px rgba(100, 149, 237, 0.04);
     }
 }
 
