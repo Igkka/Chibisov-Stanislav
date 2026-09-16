@@ -1,0 +1,224 @@
+.servicescards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 65px;
+}
+
+.servicecard {
+    position: relative;
+    min-height: 280px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(105, 170, 255, 0.16);
+    border-radius: 30px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 72, 125, 0.38),
+            rgba(15, 27, 49, 0.72)
+        );
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.4s ease,
+        box-shadow 0.5s ease;
+}
+
+.servicecard::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    right: -90px;
+    top: -100px;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(72, 155, 255, 0.28) 0%,
+            rgba(72, 155, 255, 0.08) 40%,
+            transparent 70%
+        );
+    filter: blur(15px);
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.5s ease;
+}
+
+.servicecard::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    right: 35px;
+    bottom: -45px;
+    border-radius: 50%;
+    border: 1px solid rgba(82, 160, 255, 0.18);
+    transition:
+        transform 0.6s ease,
+        border-color 0.4s ease;
+}
+
+
+.servicecard:hover {
+    transform: translateY(-12px);
+    border-color: rgba(89, 166, 255, 0.4);
+}
+
+.servicecard:hover::before {
+    transform: scale(1.25) translate(-15px, 15px);
+}
+
+.servicecard:hover::after {
+    transform: scale(1.5);
+    border-color: rgba(89, 166, 255, 0.35);
+}
+
+.servicon {
+    position: relative;
+    z-index: 2;
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 21px;
+    color: #dcecff;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(72, 145, 235, 0.3),
+            rgba(32, 70, 125, 0.18)
+        );
+    border: 1px solid rgba(111, 179, 255, 0.2);
+    transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        background 0.45s ease;
+}
+
+.servicecard:hover .servicon {
+    transform: scale(1.08) rotate(-5deg);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(76, 157, 255, 0.42),
+            rgba(39, 87, 155, 0.2)
+        );
+    box-shadow:
+        0 15px 35px rgba(37, 128, 255, 0.22);
+}
+
+.servdesc {
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+}
+
+.servdesc h3 {
+    margin: 0;
+    color: #f4f8ff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.7px;
+    transition:
+        transform 0.45s ease,
+        color 0.4s ease;
+}
+
+.servicecard:hover .servdesc h3 {
+    transform: translateX(5px);
+    color: #ffffff;
+}
+
+.servdesc p {
+    margin: 10px 0 0;
+    max-width: 430px;
+    color: rgba(220, 231, 247, 0.48);
+    font-size: 15px;
+    line-height: 1.6;
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.servicecard:hover .servdesc p {
+    color: rgba(220, 231, 247, 0.68);
+}
+
+.servicecard .service-line {
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(75, 158, 255, 0.65),
+        transparent
+    );
+    opacity: 0;
+    transform: scaleX(0.4);
+    transition:
+        opacity 0.5s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.servicecard:hover .service-line {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+
+@media (max-width: 600px) {
+
+    .servicescards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 40px;
+    }
+
+    .servicecard {
+        min-height: 165px;
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .servicon {
+        width: 48px;
+        height: 48px;
+        border-radius: 15px;
+    }
+
+    .servdesc {
+        margin-top: 18px;
+    }
+
+    .servdesc h3 {
+        font-size: 18px;
+    }
+
+    .servdesc p {
+        margin-top: 6px;
+        max-width: 90%;
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .servicecard .number {
+        right: 20px;
+        top: 20px;
+        font-size: 10px;
+    }
+
+    .servicecard .service-line {
+        left: 20px;
+        right: 20px;
+    }
+}

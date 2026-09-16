@@ -9,6 +9,7 @@ export default function NavBar(){
                 <a href="#home">Home</a>
                 <a href="#aboutme">About Me</a>
                 <a href="#projects">Projects</a>
+                <a href="#services">Services</a>
                 <a href="#skills">Skills</a>
                 <a href="#contacts">Contacts</a>
             </ul>

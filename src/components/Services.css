@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.servicespage{
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 8%;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    margin-top: 200px;
+}
+
+.servicescontent{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: end;
+    margin-bottom: 50px;
+
+    p{
+    font-size: 20px;
+    color: cornflowerblue;
+    text-align: end;
+    }
+
+    h1{
+    font-size: 68px;
+    color: whitesmoke;
+    }
+}
+
+.descservices{
+    max-width: 500px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25 0 25 0;
+    text-align: center;
+    margin-left: 1000px;
+}
+
+@media (max-width: 700px) {
+
+    .servicescontent {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .servicescontent p {
+        margin: 0 0 12px;
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 500;
+        color: cornflowerblue;
+        text-align: center;
+    }
+
+    .servicescontent h1 {
+        margin: 0;
+        font-size: clamp(40px, 12vw, 58px);
+        line-height: 0.95;
+        letter-spacing: -2px;
+        color: whitesmoke;
+        text-align: center;
+    }
+
+    .descservices {
+        width: 100%;
+        max-width: 420px;
+        margin: 16px 0 0;
+        color: rgba(245, 245, 245, 0.55);
+        font-size: 14px;
+        line-height: 1.55;
+        text-align: center;
+    }
+
+    .servicescards {
+        width: 100%;
+        margin-top: 35px;
+    }
+}

@@ -8,6 +8,7 @@ import AccordionGallery from "@/components/AccordionGallery";
 import SkillsPage from "@/components/Skills";
 import ContactsPage from "@/components/Contacts";
 import Footer from "@/components/Footer";
+import Services from "@/components/Services";
 
 export default function portfolio() {
   return (
@@ -26,6 +27,7 @@ export default function portfolio() {
         <HomePage />
         <AboutMe/>
         <AccordionGallery/>
+        <Services/>
         <SkillsPage/>
         <ContactsPage/>
         <Footer/>
